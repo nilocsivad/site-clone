@@ -35,6 +35,16 @@
 		overflow:hidden;
 	}
 </style>
+<script type="text/javascript">
+	function hrefCallback(item) {
+		var href = item.getAttribute( "href" );
+		if ( href.indexOf( "?" ) > 0 ) {
+			href = href.substring( 0, href.indexOf( "?" ) );
+		}
+		href = href + "?t=" + ( new Date() ).getTime();
+		item.setAttribute( "href", href );
+	}
+</script>
 </head>
 <body>
 
@@ -43,7 +53,10 @@
 			<h1 style="text-align:center;">Clone Web Site</h1>
 		</div>
 		
-		<div class="link-item"><a href="./www.eswmz.com/cecba/welcome1.jsp/www.eswmz.com-cecba-welcome1.jsp.html" title="全球商务名址服务中心">全球商务名址服务中心 http://www.eswmz.com</a></div>
+		<div class="link-item"><a target="_blank" onclick="hrefCallback(this)" href="./www.eswmz.com/cecba/welcome1.jsp/www.eswmz.com-cecba-welcome1.jsp.html" title="全球商务名址服务中心">全球商务名址服务中心 http://www.eswmz.com</a></div>
+		<div class="link-item"><a target="_blank" onclick="hrefCallback(this)" href="./cpanel.hostinger.com.hk/auth/cpanel.hostinger.com.hk-auth.html" title="登录至您的账号">登录至您的账号 http://cpanel.hostinger.com.hk</a></div>
+		<div class="link-item"><a target="_blank" onclick="hrefCallback(this)" href="./github.com/login/github.com-login.html" title="Sign in · GitHub">Sign in · GitHub https://github.com/login</a></div>
+		<div class="link-item"><a target="_blank" onclick="hrefCallback(this)" href="./my.screenname.aol.com/_cqr/login/login.psp/my.screenname.aol.com-_cqr-login-login.psp.html" title="AOL.com - Welcome to AOL">AOL.com - Welcome to AOL https://my.screenname.aol.com/_cqr/login/login.psp</a></div>
 	</div>
 
 </body>
