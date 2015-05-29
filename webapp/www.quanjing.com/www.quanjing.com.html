@@ -44,9 +44,69 @@
 		color:#213e66;
 		text-decoration:underline;
 	}
+	.menu-bar a:link,
+	.menu-bar a:visited {
+		background:none;
+		color:#2c2c2c;
+		text-decoration:none;
+	}
+	.menu-bar a:hover,
+	.menu-bar a:active {
+		background:#2c2c2c;
+		color:#ffffff;
+		text-decoration:underline;
+	}
+	.menu-bar-r a:link,
+	.menu-bar-r a:visited {
+		color:#666;
+		text-decoration:none;
+	}
+	.menu-bar-r a:hover,
+	.menu-bar-r a:active {
+		color:orange;
+		text-decoration:underline;
+	}
+	.img-points a {
+		background:white;
+	}
+	.img-points a.active-point {
+		background:orange;
+	}
+	.img-points a:link,
+	.img-points a:visited {
+		text-decoration:none;
+	}
+	.img-points a:hover,
+	.img-points a:active {
+		background:orange;
+	}
+	.hot-tag a:link,
+	.hot-tag a:visited {
+		text-decoration:none;
+	}
+	.hot-tag a:hover,
+	.hot-tag a:active {
+		background:orange;
+	}
+	.more-service a:link,
+	.more-service a:visited {
+		text-decoration:none;
+	}
+	.more-service a:hover,
+	.more-service a:active {
+		text-decoration:underline;
+	}
 </style>
+<script type="text/javascript">
+	window.onload = function() {
+		var tags_li = document.getElementById("scroll-point-dom").getElementsByTagName("li");
+		for ( var i = 0, l = tags_li.length; l > i; ++i ) {
+			tags_li[i].getElementsByTagName("a")[0].setAttribute("pointIndex", i);
+		}
+	};
+</script>
 </head>
-<body>
+<body style="background:#f1f1f1;">
 
 	<div id="header" style="display:block;width:100%;margin:0;padding:0;background:url('./images/top-bg.png') 0 0 repeat-x;">
 		<div style="display:block;width:1000px;height:99px;margin:0 auto;padding:0;">
@@ -64,17 +124,624 @@
 	</div>
 	
 	<div id="container" style="display:block;width:100%;margin:0;padding:0;">
-		<div style="display:block;width:1000px;margin:0 auto;padding:10px 0;">
+		<div style="display:block;width:980px;margin:0 auto;padding:10px;">
 			
-			<div style="display:block;float:left;width:48px;height:38px;margin:0;padding:0;background:url('./images/home-bg.png') 0 -5px no-repeat;">
-				<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0;"></a>
+			<!-- menu-bar -->
+			<div style="display:block;width:100%;margin:0;height:auto;margin:0;padding:0;border-bottom:1px solid #000000;overflow:hidden;">
+				<div style="display:block;float:left;width:48px;height:38px;margin:0;padding:0;background:url('./images/home-bg.png') 0 -5px no-repeat;">
+					<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0;"></a>
+				</div>
+				<div style="display:block;float:left;height:38px;line-heigh:38px;margin:0;padding:0;">
+					<ul class="menu-bar" style="display:block;margin:0;padding:0;">
+						<li style="display:block;float:left;margin:0 10px 0 0;padding:0;">
+							<a href="#" style="display:block;height:100%;margin:0;padding:4px 8px;font-size:16px;">创&nbsp;&nbsp;意</a>
+						</li>
+						<li style="display:block;float:left;margin:0 10px 0 0;padding:0;">
+							<a href="#" style="display:block;height:100%;margin:0;padding:4px 8px;font-size:16px;">编&nbsp;&nbsp;辑</a>
+						</li>
+						<li style="display:block;float:left;margin:0 10px 0 0;padding:0;">
+							<a href="#" style="display:block;height:100%;margin:0;padding:4px 8px;font-size:16px;">旅&nbsp;&nbsp;游</a>
+						</li>
+						<li style="display:block;float:left;margin:0 10px 0 0;padding:0;">
+							<a href="#" style="display:block;height:100%;margin:0;padding:4px 8px;font-size:16px;">家&nbsp;&nbsp;居</a>
+						</li>
+						<li style="display:block;float:left;margin:0 10px 0 0;padding:0;">
+							<a href="#" style="display:block;height:100%;margin:0;padding:4px 8px;font-size:16px;">汽&nbsp;&nbsp;车</a>
+						</li>
+						<li style="display:block;float:left;margin:0 10px 0 0;padding:0;">
+							<a href="#" style="display:block;height:100%;margin:0;padding:4px 8px;font-size:16px;">美&nbsp;&nbsp;食</a>
+						</li>
+						<li style="display:block;float:left;margin:0 10px 0 0;padding:0;">
+							<a href="#" style="display:block;height:100%;margin:0;padding:4px 8px;font-size:16px;">时&nbsp;&nbsp;尚</a>
+						</li>
+						<li style="display:block;float:left;margin:0 10px 0 0;padding:0;">
+							<a href="#" style="display:block;height:100%;margin:0;padding:4px 8px;font-size:16px;">壁&nbsp;&nbsp;纸</a>
+						</li>
+						<li style="display:block;float:left;margin:0 10px 0 0;padding:0;">
+							<a href="#" style="display:block;height:100%;margin:0;padding:4px 8px;font-size:16px;">社&nbsp;&nbsp;区</a>
+						</li>
+					</ul>
+				</div>
+				<div style="display:block;float:right;height:38px;line-heigh:38px;margin:0;padding:0;">
+					<ul class="menu-bar-r" style="display:block;margin:0;padding:0;">
+						<li style="display:block;float:left;margin:0 10px 0 0;padding:0;">
+							<a href="#" style="display:block;height:100%;margin:0;padding:8px 2px;">我的账户</a>
+						</li>
+						<li style="display:block;float:left;margin:0 10px 0 0;padding:0;">
+							<a href="#" style="display:block;height:100%;margin:0;padding:8px 2px;">我的空间</a>
+						</li>
+						<li style="display:block;float:left;margin:0 10px 0 0;padding:0;">
+							<a href="#" style="display:block;height:100%;margin:0;padding:8px 2px;">购物车(<b style="color:red;">0</b>)</a>
+						</li>
+					</ul>
+				</div>
+			</div><!-- end menu-bar -->
+			
+			<p style="margin:0;padding:0;">&nbsp;</p>
+			
+			<!-- scroll image -->
+			<div style="display:block;width:980px;height:auto;margin:0 auto;padding:0;overflow:hidden;">
+				<!-- big images -->
+				<ul id="scroll-image-dom" style="display:block;width:9999px;height:380px;margin:0;padding:0;position:relative;left:0px;">
+					<li style="display:block;float:left;width:980px;height:100%;margin:0;padding:0;">
+						<a style="display:block;width:100%;height:100%;margin:0;padding:0;">
+							<img alt="" src="./images/20150510.jpg" style="display:block;width:100%;height:100%;margin:0;padding:0;" />
+						</a>
+					</li>
+					<li style="display:block;float:left;width:980px;height:100%;margin:0;padding:0;">
+						<a style="display:block;width:100%;height:100%;margin:0;padding:0;">
+							<img alt="" src="./images/20150511.jpg" style="display:block;width:100%;height:100%;margin:0;padding:0;" />
+						</a>
+					</li>
+					<li style="display:block;float:left;width:980px;height:100%;margin:0;padding:0;">
+						<a style="display:block;width:100%;height:100%;margin:0;padding:0;">
+							<img alt="" src="./images/20150513.jpg" style="display:block;width:100%;height:100%;margin:0;padding:0;" />
+						</a>
+					</li>
+					<li style="display:block;float:left;width:980px;height:100%;margin:0;padding:0;">
+						<a style="display:block;width:100%;height:100%;margin:0;padding:0;">
+							<img alt="" src="./images/20150516.jpg" style="display:block;width:100%;height:100%;margin:0;padding:0;" />
+						</a>
+					</li>
+					<li style="display:block;float:left;width:980px;height:100%;margin:0;padding:0;">
+						<a style="display:block;width:100%;height:100%;margin:0;padding:0;">
+							<img alt="" src="./images/20150517.jpg" style="display:block;width:100%;height:100%;margin:0;padding:0;" />
+						</a>
+					</li>
+					<li style="display:block;float:left;width:980px;height:100%;margin:0;padding:0;">
+						<a style="display:block;width:100%;height:100%;margin:0;padding:0;">
+							<img alt="" src="./images/20150518.jpg" style="display:block;width:100%;height:100%;margin:0;padding:0;" />
+						</a>
+					</li>
+				</ul><!-- end big images -->
+				<!-- points -->
+				<script type="text/javascript">
+					function reset_active( active_p_i ) {
+						var tags_li = document.getElementById("scroll-point-dom").getElementsByTagName("li");
+						for ( var i = 0, l = tags_li.length; l > i; ++i ) {
+							tags_li[i].getElementsByTagName("a")[0].setAttribute("class", "");
+						}
+						tags_li[active_p_i].getElementsByTagName("a")[0].setAttribute("class", "active-point");
+					}
+					function scroll_to( tag_a ) {
+						var liWidth = 980, count = 1, num = 50;
+						var index = tag_a.getAttribute("pointIndex");
+						reset_active( index );
+						var scroll_dom = document.getElementById("scroll-image-dom");
+						var str_left = scroll_dom.style.left;
+						    str_left = str_left.substring( 0, str_left.length - 2 );
+						var left = window.parseInt( str_left );
+						var ol_width = scroll_dom.getElementsByTagName("li").length * liWidth;
+						var go = - ( index * liWidth );
+						if ( go > left ) {
+							var timer = window.setInterval( function() {
+								if ( left < go ) {
+									left += num;
+									scroll_dom.style.left = left + "px";
+								} else {
+									window.clearInterval( timer );
+									scroll_dom.style.left = go + "px";
+								}
+							}, 1 );
+						} else {
+							var timer = window.setInterval( function() {
+								if ( left > go ) {
+									left -= num;
+									scroll_dom.style.left = left + "px";
+								} else {
+									window.clearInterval( timer );
+									scroll_dom.style.left = go + "px";
+								}
+							}, 1 );
+						}
+					}
+				</script>
+				<ul id="scroll-point-dom" class="img-points" style="display:block;width:120px;height:14px;margin:0 auto;padding:0;position:relative;top:-20px;">
+					<li style="display:block;float:left;width:20px;height:12px;margin:0;padding:0;">
+						<a onclick="scroll_to(this)" onmouseover="scroll_to(this)" class="active-point" style="display:block;width:12px;height:12px;margin:0 auto;padding:0;border-radius:7px;"></a>
+					</li>
+					<li style="display:block;float:left;width:20px;height:12px;margin:0;padding:0;">
+						<a onclick="scroll_to(this)" onmouseover="scroll_to(this)" style="display:block;width:12px;height:12px;margin:0 auto;padding:0;border-radius:7px;"></a>
+					</li>
+					<li style="display:block;float:left;width:20px;height:12px;margin:0;padding:0;">
+						<a onclick="scroll_to(this)" onmouseover="scroll_to(this)" style="display:block;width:12px;height:12px;margin:0 auto;padding:0;border-radius:7px;"></a>
+					</li>
+					<li style="display:block;float:left;width:20px;height:12px;margin:0;padding:0;">
+						<a onclick="scroll_to(this)" onmouseover="scroll_to(this)" onclick="scroll_to(this)" onmouseover="scroll_to(this)" style="display:block;width:12px;height:12px;margin:0 auto;padding:0;border-radius:7px;"></a>
+					</li>
+					<li style="display:block;float:left;width:20px;height:12px;margin:0;padding:0;">
+						<a onclick="scroll_to(this)" onmouseover="scroll_to(this)" style="display:block;width:12px;height:12px;margin:0 auto;padding:0;border-radius:7px;"></a>
+					</li>
+					<li style="display:block;float:left;width:20px;height:12px;margin:0;padding:0;">
+						<a onclick="scroll_to(this)" onmouseover="scroll_to(this)" style="display:block;width:12px;height:12px;margin:0 auto;padding:0;border-radius:7px;"></a>
+					</li>
+				</ul><!-- end points -->
+			</div><!-- end scroll image -->
+			
+			<div style="display:block;margin:0;padding:0;overflow:hidden;">
+				<div style="display:block;float:left;margin:0;padding:10px;background:#ffffff;">
+					<h3><a href="#" style="font-size:18px;color:#213e66;">热门标签</a></h3>
+					<div class="hot-tag" style="display:block;margin:0;padding:6px 0;">
+						<ul style="display:block;float:left;width:70px;margin:0 6px;padding:0;">
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">人物</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">东方人</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">女人</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">男人</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">老人</a>
+							</li>
+						</ul>
+						<div style="display:block;float:left;width:4px;height:140px;margin:10px 0 0 6px;padding:0;border-left:1px solid #999;"></div>
+						<ul style="display:block;float:left;width:70px;margin:0 6px;padding:0;">
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">城市</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">建筑</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">中国</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">欧洲</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">亚洲</a>
+							</li>
+						</ul>
+						<div style="display:block;float:left;width:4px;height:140px;margin:10px 0 0 6px;padding:0;border-left:1px solid #999;"></div>
+						<ul style="display:block;float:left;width:70px;margin:0 6px;padding:0;">
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">商务</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">团队</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">办公室</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">商场</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">合作</a>
+							</li>
+						</ul>
+						<div style="display:block;float:left;width:4px;height:140px;margin:10px 0 0 6px;padding:0;border-left:1px solid #999;"></div>
+						<ul style="display:block;float:left;width:70px;margin:0 6px;padding:0;">
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">城市</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">建筑</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">中国</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">欧洲</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">亚洲</a>
+							</li>
+						</ul>
+						<div style="display:block;float:left;width:4px;height:140px;margin:10px 0 0 6px;padding:0;border-left:1px solid #999;"></div>
+						<ul style="display:block;float:left;width:70px;margin:0 6px;padding:0;">
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">商务</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">团队</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">办公室</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">商场</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">合作</a>
+							</li>
+						</ul>
+						<div style="display:block;float:left;width:4px;height:140px;margin:10px 0 0 6px;padding:0;border-left:1px solid #999;"></div>
+						<ul style="display:block;float:left;width:70px;margin:0 6px;padding:0;">
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">城市</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">建筑</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">中国</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">欧洲</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">亚洲</a>
+							</li>
+						</ul>
+						<div style="display:block;float:left;width:4px;height:140px;margin:10px 0 0 6px;padding:0;border-left:1px solid #999;"></div>
+						<ul style="display:block;float:left;width:70px;margin:0 6px;padding:0;">
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">商务</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">团队</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">办公室</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">商场</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:100%;height:100%;margin:0;padding:0 0 0 4px;font-size:14px;">合作</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div style="display:block;float:right;margin:0;padding:10px;background:#ffffff;">
+					<h3 style="color:#213e66;">更多服务</h3>
+					<div class="more-service" style="display:block;margin:0;padding:6px 0;">
+						<ul style="display:block;float:left;width:130px;margin:0 6px;padding:0;">
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:90px;height:100%;margin:0;padding:0 0 0 40px;font-size:14px;">人物</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:90px;height:100%;margin:0;padding:0 0 0 40px;font-size:14px;">东方人</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:90px;height:100%;margin:0;padding:0 0 0 40px;font-size:14px;">女人</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:90px;height:100%;margin:0;padding:0 0 0 40px;font-size:14px;">男人</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:90px;height:100%;margin:0;padding:0 0 0 40px;font-size:14px;">老人</a>
+							</li>
+						</ul>
+						<ul style="display:block;float:left;width:130px;margin:0 6px;padding:0;">
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:90px;height:100%;margin:0;padding:0 0 0 40px;font-size:14px;">人物</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:90px;height:100%;margin:0;padding:0 0 0 40px;font-size:14px;">东方人</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:90px;height:100%;margin:0;padding:0 0 0 40px;font-size:14px;">女人</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:90px;height:100%;margin:0;padding:0 0 0 40px;font-size:14px;">男人</a>
+							</li>
+							<li style="display:block;height:30px;line-height:30px;margin:0;padding:0;">
+								<a href="#" style="display:block;width:90px;height:100%;margin:0;padding:0 0 0 40px;font-size:14px;">老人</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
+			
+			<p style="margin:0;padding:0;">&nbsp;</p>
+			
+			<div style="display:block;margin:0;padding:0;overflow:hidden;">
+				<div style="display:block;margin:0;padding:10px;background:#ffffff;">
+					<div style="display:block;width:100%;margin:4px 0;padding:0;overflow:hidden;">
+						<h3 style="display:block;float:left;"><a href="#" style="font-size:18px;color:#213e66;">旅游天地</a></h3>
+						<a style="display:block;float:right;height:20px;line-height:26px;margin:0 4px;padding:0;">更多>>></a>
+					</div>
+					<div class="tour-tag" style="display:block;margin:0;padding:0;overflow:hidden;">
+						<ul style="display:block;width:100%;margin:0;padding:0;">
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/ly-bl.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">巴黎</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/ly-lm.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">罗马</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/ly-wns.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">威尼斯</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/ly-xz.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">西藏</a></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<p style="margin:0;padding:0;">&nbsp;</p>
+			
+			<div style="display:block;width:100%;height:100px;margin:0;padding:0;background:url('./images/bench.jpg') center center no-repeat;"></div>
+			
+			<p style="margin:0;padding:0;">&nbsp;</p>
+			
+			<div style="display:block;margin:0;padding:0;overflow:hidden;">
+				<div style="display:block;margin:0;padding:10px;background:#ffffff;">
+					<div style="display:block;width:100%;margin:4px 0;padding:0;overflow:hidden;">
+						<h3 style="display:block;float:left;"><a href="#" style="font-size:18px;color:#213e66;">美好家居</a></h3>
+						<a style="display:block;float:right;height:20px;line-height:26px;margin:0 4px;padding:0;">更多>>></a>
+					</div>
+					<div class="tour-tag" style="display:block;margin:0;padding:0;overflow:hidden;">
+						<ul style="display:block;width:100%;margin:0;padding:0;">
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/jj-kt.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">客厅</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/jj-cf.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">厨房</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/jj-ws.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">卧室</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/jj-etf.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">儿童房</a></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<p style="margin:0;padding:0;">&nbsp;</p>
+			
+			<div style="display:block;margin:0;padding:0;overflow:hidden;">
+				<div style="display:block;margin:0;padding:10px;background:#ffffff;">
+					<div style="display:block;width:100%;margin:4px 0;padding:0;overflow:hidden;">
+						<h3 style="display:block;float:left;"><a href="#" style="font-size:18px;color:#213e66;">美食美刻</a></h3>
+						<a style="display:block;float:right;height:20px;line-height:26px;margin:0 4px;padding:0;">更多>>></a>
+					</div>
+					<div class="tour-tag" style="display:block;margin:0;padding:0;overflow:hidden;">
+						<ul style="display:block;width:100%;margin:0;padding:0;">
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/ms-zc.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">中餐</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/ms-xc.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">西餐</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/ms-tp.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">甜品</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/ms-mkl.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">马卡龙</a></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<p style="margin:0;padding:0;">&nbsp;</p>
+			
+			<div style="display:block;margin:0;padding:0;overflow:hidden;">
+				<div style="display:block;margin:0;padding:10px;background:#ffffff;">
+					<div style="display:block;width:100%;margin:4px 0;padding:0;overflow:hidden;">
+						<h3 style="display:block;float:left;"><a href="#" style="font-size:18px;color:#213e66;">人车生活</a></h3>
+						<a style="display:block;float:right;height:20px;line-height:26px;margin:0 4px;padding:0;">更多>>></a>
+					</div>
+					<div class="tour-tag" style="display:block;margin:0;padding:0;overflow:hidden;">
+						<ul style="display:block;width:100%;margin:0;padding:0;">
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/qc-bc.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">奔驰</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/qc-pc.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">跑车</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/qc-yyc.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">越野车</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/qc-lyc.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">老爷车</a></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<p style="margin:0;padding:0;">&nbsp;</p>
+			
+			<div style="display:block;width:100%;height:100px;margin:0;padding:0;background:url('./images/olay.jpg') center center no-repeat;"></div>
+			
+			<p style="margin:0;padding:0;">&nbsp;</p>
+			
+			<div style="display:block;margin:0;padding:0;overflow:hidden;">
+				<div style="display:block;margin:0;padding:10px;background:#ffffff;">
+					<div style="display:block;width:100%;margin:4px 0;padding:0;overflow:hidden;">
+						<h3 style="display:block;float:left;"><a href="#" style="font-size:18px;color:#213e66;">时尚伊人</a></h3>
+						<a style="display:block;float:right;height:20px;line-height:26px;margin:0 4px;padding:0;">更多>>></a>
+					</div>
+					<div class="tour-tag" style="display:block;margin:0;padding:0;overflow:hidden;">
+						<ul style="display:block;width:100%;margin:0;padding:0;">
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/ss-fx.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">发型</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/ss-mc.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">美唇</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/ss-zbss.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">珠宝首饰</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/ss-mj.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">美甲</a></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<p style="margin:0;padding:0;">&nbsp;</p>
+			
+			<div style="display:block;margin:0;padding:0;overflow:hidden;">
+				<div style="display:block;margin:0;padding:10px;background:#ffffff;">
+					<div style="display:block;width:100%;margin:4px 0;padding:0;overflow:hidden;">
+						<h3 style="display:block;float:left;"><a href="#" style="font-size:18px;color:#213e66;">T台走秀</a></h3>
+						<a style="display:block;float:right;height:20px;line-height:26px;margin:0 4px;padding:0;">更多>>></a>
+					</div>
+					<div class="tour-tag" style="display:block;margin:0;padding:0;overflow:hidden;">
+						<ul style="display:block;width:100%;margin:0;padding:0;">
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/tt-nz.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">男装</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/tt-hs.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">婚纱</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/tt-bjn.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">比基尼</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/tt-gjdz.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">高级定制</a></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<p style="margin:0;padding:0;">&nbsp;</p>
+			
+			<div style="display:block;margin:0;padding:0;overflow:hidden;">
+				<div style="display:block;margin:0;padding:10px;background:#ffffff;">
+					<div style="display:block;width:100%;margin:4px 0;padding:0;overflow:hidden;">
+						<h3 style="display:block;float:left;"><a href="#" style="font-size:18px;color:#213e66;">壁纸美图</a></h3>
+						<a style="display:block;float:right;height:20px;line-height:26px;margin:0 4px;padding:0;">更多>>></a>
+					</div>
+					<div class="tour-tag" style="display:block;margin:0;padding:0;overflow:hidden;">
+						<ul style="display:block;width:100%;margin:0;padding:0;">
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/scene.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">风景</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/building.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">建筑</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/object.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">静物</a></p>
+							</li>
+							<li style="display:block;float:left;width:25%;margin:0;padding:0;">
+								<a style="display:block;width:100%;margin:0;padding:0;">
+									<img src="./images/animal.jpg" style="max-width:100%;margin:0 auto;padding:0;border:none;background:none;" />
+								</a>
+								<p style="margin:0;padding:0;text-align:center;"><a href="#" style="display:block;margin:0 auto;padding:0;">动物</a></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<p style="margin:0;padding:0;">&nbsp;</p>
+			
+			<div style="display:block;width:100%;height:100px;margin:0;padding:0;background:url('./images/chenman-h.jpg') center center no-repeat;"></div>
 			
 		</div>
 	</div>
 	
 	<div id="footer" style="display:block;width:100%;margin:0;padding:0;">
-	
+		<div style="display:block;width:980px;margin:0 auto;padding:0;border-top:1px dashed #ccc;">
+			<p style="width:100%;height:30px;line-height:30px;margin:0;padding:0;text-align:center;">版权声明：所有图片均受著作权保护，未经许可不得使用，不得转载、摘编。</p>
+		</div>
 	</div>
 
 </body>
