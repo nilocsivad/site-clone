@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Language" content="en">
+
+<title>[万网-帐号登录] - Clone web site</title>
+
+<style type="text/css">
+	* {
+		margin:0;
+		padding:0;
+		font-size:12px;
+		font-weight:normal;
+		font-family:'Microsoft YaHei','Helvetica Neue',Helvetica,Arial,sans-serif;
+		color:#4d4d4d;
+	}
+	h1 { font-size:22px; }
+	h2 { font-size:20px; }
+	h3 { font-size:18px; }
+	h4 { font-size:16px; }
+	h5 { font-size:14px; }
+	h6 { font-size:12px; }
+	ol,ul,li {
+		list-style:none;
+	}
+	input {
+		cursor:pointer;
+	}
+	input[type='text'],
+	input[type='password'] {
+		cursor:default;
+	}
+	a {
+		cursor:pointer;
+	}
+	a:link,
+	a:visited {
+		color:#4d4d4d;
+		text-decoration:none;
+	}
+	a:hover,
+	a:active {
+		color:#213e66;
+		text-decoration:underline;
+	}
+	p.empty-line {
+		height:10px;
+		margin:0;padding:0;
+	}
+</style>
+<style type="text/css">
+	header.header {
+		display:block;width:100%;height:74px;
+		border-bottom:1px solid #e3e3e3;
+		background-color:#ffffff;
+		margin:0;padding:0;
+		overflow:hidden;
+	}
+	.header-layout {
+		display:block;min-width:1000px;max-width:1200px;
+		margin:0 auto;padding:17px 0;
+		overflow:hidden;
+	}
+	.header-layout h1.logo {
+		display:inline-block;float:left;width:140px;height:40px;
+		margin:0;padding:0;
+		background:url('./images/ali-logo.png') -26px -322px no-repeat;
+	}
+	.header-layout h1.logo a {
+		display:block;width:100%;height:100%;margin:0;padding:0;
+	}
+	.header-layout h2.logo-txt {
+		display:inline-block;float:left;height:30px;line-height:30px;
+		margin:4px 0 0 0;padding:0;
+		font-size:20px;
+	}
+	.header-layout ul.header-nav {
+		display:inline-block;float:right;height:30px;line-height:30px;
+		overflow:hidden;
+	}
+	.header-layout ul.header-nav li {
+		display:block;float:left;height:30px;line-height:30px;
+		margin:2px 4px;
+		list-style:none;
+	}
+</style>		
+<style type="text/css">
+	#wrapper p.empty {
+		display:block;width:100%;height:80px;
+		margin:0;padding:0;
+	}
+	#container {
+		display:block;min-width:1000px;max-width:1200px;
+		margin:0 auto;padding:0;
+		overflow:hidden;
+	}
+	.img-info-area {
+		display:block;float:left;width:50%;min-width:450px;
+		overflow:hidden;
+	}
+	.img-info-area a {
+		display:block;width:450px;height:350px;
+		margin:0 10% 0 auto;padding:0;
+	}
+	.login-area {
+		display:block;float:left;width:50%;min-width:450px;
+		overflow:hidden;
+	}
+	.login-area .login-box {
+		border:1px solid #d4d4d4;
+		display:block;width:260px;height:240px;
+		margin:0 auto;padding:20px;
+		overflow:hidden;
+	}
+	.login-area .login-box .top-hint {
+		border-bottom:1px solid #ccc;
+		display:block;width:100%;height:22px;line-height:22px;
+		margin:0;padding:0;
+	}
+	.login-area .login-box .info-hint-line {
+		display:block;width:100%;height:24px;line-height:24px;
+		margin:0;padding:0;
+	}
+	.login-area .login-box .info-hint-line b {
+		font-weight:bold;
+	}
+	.login-area .login-box .info-hint-line a {
+		display:block;float:right;
+		color:#00a2ca;
+	}
+	.login-area .login-box .info-hint-line a.fl {
+		float:left;
+	}
+	.login-area .login-box .input-line input {
+		border:1px solid #ccc;border-radius:3px;outline-color:#69c5dd;
+		width:252px;height:24px;line-height:24px;
+		margin:0;padding:4px;
+	}
+	.login-area .login-box .btn-line .btn-submit {
+		background:#00a2ca;border:none;border-radius:3px;outline-color:#69c5dd;
+		width:262px;height:34px;line-height:34px;
+		margin:0;padding:0;
+		color:white;
+	}
+	.login-area .login-box .btn-line .btn-submit:hover {
+		filter:alpha(opacity=75);opacity:0.75;
+	}
+</style>
+<style type="text/css">
+	footer.footer {
+		display:block;width:100%;height:74px;
+		border-top:1px solid #e5e5e5;
+		background-color:#ffffff;
+		margin:0;padding:20px 0;
+		overflow:hidden;
+	}
+	.footer-layout {
+		display:block;min-width:1000px;max-width:1200px;
+		margin:0 auto;padding:0;
+		overflow:hidden;
+	}
+	.foot-line {
+		display:block;width:100%;height:26px;line-height:26px;
+		margin:0;padding:0;
+		text-align:center;color:#b3b3b3;
+		overflow:hidden;
+	}
+	.foot-line a {
+		color:#b3b3b3;
+	}
+</style>
+</head>
+<body>
+	
+	<header class="header">
+		<div class="header-layout">
+			<h1 class="logo"><a href="#"></a></h1>
+			<h2 class="logo-txt">登录</h2>
+			<ul class="header-nav">
+				<li><a href="#">阿里云首页</a></li>
+				<li> | </li>
+				<li><a href="#">万网首页</a></li>
+				<li> | </li>
+				<li><a href="#">帮助中心</a></li>
+				<li> | </li>
+				<li><a href="#">论坛</a></li>
+			</ul>
+		</div>
+	</header>
+	
+	<div id="wrapper">
+		<p class="empty">&nbsp;</p>
+		<div id="container">
+		
+			<div class="img-info-area">
+				<a href="#"><img src="./images/b-img.jpg" /></a>
+			</div>
+			<div class="login-area">
+				<div class="login-box">
+					<form action="" method="post">
+						<p class="top-hint">淘宝及1688帐号可直接使用会员名登录</p>
+						<p class="empty-line">&nbsp;</p>
+						
+						<p class="info-hint-line">
+							<b>登录名:</b>
+							<a href="#">忘记登录名？</a>
+						</p>
+						<p class="input-line">
+							<input type="text" class="input" placeholder="手机/邮箱/会员号/8位ID" />
+						</p>
+						<p class="empty-line">&nbsp;</p>
+						
+						<p class="info-hint-line">
+							<b>登录密码:</b>
+							<a href="#">忘记登录密码？</a>
+						</p>
+						<p class="input-line">
+							<input type="password" class="input" placeholder="登录密码" />
+						</p>
+						<p class="empty-line">&nbsp;</p>
+						
+						<p class="btn-line">
+							<input type="submit" class="btn-submit" value="登录" />
+						</p>
+					</form>
+					<p class="empty-line">&nbsp;</p>
+						
+					<p class="info-hint-line">
+						<a class="fl" href="#">原支付宝快捷登录</a>
+						<a href="#">免费注册</a>
+					</p>
+				</div>
+			</div>
+			
+		</div>
+		<p class="empty">&nbsp;</p>
+	</div>
+	
+	<footer class="footer">
+		<div class="footer-layout">
+			<p class="foot-line">
+				<span><a href="#">关于我们</a></span>
+				<span><a href="#">法律声明</a></span>
+				<span><a href="#">友情链接</a></span>
+			</p>
+			<p class="foot-line">
+				<span><a href="#">阿里巴巴集团</a></span>
+				<span><a href="#">阿里巴巴国际站</a></span>
+				<span><a href="#">阿里巴巴中国站</a></span>
+				<span><a href="#">全球速卖通</a></span>
+				<span><a href="#">淘宝网</a></span>
+				<span><a href="#">天猫</a></span>
+				<span><a href="#">聚划算</a></span>
+				<span><a href="#">一淘</a></span>
+				<span><a href="#">阿里妈妈</a></span>
+				<span><a href="#">阿里云计算</a></span>
+				<span><a href="#">云OS</a></span>
+				<span><a href="#">万网</a></span>
+				<span><a href="#">支付宝</a></span>
+				<span><a href="#">来往</a></span>
+			</p>
+			<p class="foot-line">© 2015 Aliyun.com 版权所有 ICP证：浙B2-20080101</p>
+		</div>
+	</footer>
+
+</body>
+</html>
