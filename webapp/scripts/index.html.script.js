@@ -2,7 +2,7 @@
  * 
  */
 
-var LONG_DELAY_TIME = 3000;
+var LONG_DELAY_TIME = DELAY_TIME;
 
 var isProcessing = false;
 var auto_scroll_timer = null;
@@ -14,14 +14,15 @@ window.onload = function() {
 	for ( var i = 0, l = tags_li.length; l > i; ++i ) {
 		tags_li[i].getElementsByTagName("a")[0].setAttribute("pointIndex", i);
 	}
-	window.setTimeout(function() {
-		tags_li[0].getElementsByTagName("a")[0].setAttribute("class", "active");
-		set_img_src( 0 );
-	}, 50);
 	
 	if (!isSetAutoScroll) {
 		auto_show( true );
 	}
+	
+	window.setTimeout(function() {
+		tags_li[0].getElementsByTagName("a")[0].setAttribute("class", "active");
+		set_img_src( 0 );
+	}, 50);
 };
 
 function show_img( tag_a ) {
