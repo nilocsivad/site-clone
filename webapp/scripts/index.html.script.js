@@ -2,7 +2,7 @@
  * 
  */
 
-var LONG_DELAY_TIME = 1500;
+var LONG_DELAY_TIME = 3000;
 
 var isProcessing = false;
 var auto_scroll_timer = null;
