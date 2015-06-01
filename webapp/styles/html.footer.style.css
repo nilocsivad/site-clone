@@ -2,9 +2,9 @@ footer.footer {
   display: block;
   width: 100%;
   margin: 0;
-  padding: 20px 0;
+  padding: 15px 0;
   overflow: hidden;
-  border-top: 1px solid #dcdcdc;
+  border-top: 1px solid #99c742;
 }
 footer.footer p.declare {
   display: block;
