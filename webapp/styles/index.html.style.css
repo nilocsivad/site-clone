@@ -1,0 +1,144 @@
+#container .scroll-img {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+#container .scroll-img .img-box {
+  display: block;
+  width: 640px;
+  height: 427px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+#container .scroll-img .img-box ul#scroll-img-ul {
+  display: block;
+  width: 9999px;
+  height: 427px;
+  margin: 0;
+  padding: 0;
+}
+#container .scroll-img .img-box ul#scroll-img-ul li {
+  display: none;
+  width: 640px;
+  height: 427px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+#container .scroll-img .img-box ul#scroll-img-ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#container .scroll-img .img-box ul#scroll-img-ul li a img {
+  display: block;
+  width: 640px;
+  height: 427px;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+}
+#container .scroll-img .img-points-box {
+  display: block;
+  float: right;
+  width: 640px;
+  height: 10px;
+  margin: 0;
+  padding: 5px 0;
+  background: #000000;
+  position: relative;
+  bottom: 20px;
+}
+#container .scroll-img .img-points-box ul#scroll-img-point {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+}
+#container .scroll-img .img-points-box ul#scroll-img-point li {
+  display: block;
+  float: left;
+  width: 10px;
+  height: 10px;
+  margin: 0 3px;
+  padding: 0;
+  list-style: none;
+}
+#container .scroll-img .img-points-box ul#scroll-img-point li a {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  border-radius: 5px;
+}
+#container .scroll-img .img-points-box ul#scroll-img-point li a:hover {
+  background: red;
+}
+#container .scroll-img .img-points-box ul#scroll-img-point li a.active {
+  background: red;
+}
+#container .link-area {
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+#container .link-area .item-area {
+  display: block;
+  float: left;
+  margin: 0 0 10px 10px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #6a931b;
+}
+#container .link-area .item-area .item-title {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  margin: 0;
+  padding: 0;
+  background: #99c742;
+  border-bottom: 1px solid #86b52d;
+}
+#container .link-area .item-area .item-title span {
+  display: block;
+  margin: 0 10px;
+  padding: 0;
+  color: #ffffff;
+}
+#container .link-area .item-area .item-content {
+  display: block;
+  0margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+#container .link-area .item-area .item-content .link-item {
+  display: block;
+  float: left;
+  margin: 10px;
+  padding: 10px;
+  overflow: hidden;
+  border: 1px solid #d8dadf;
+}
+#container .link-area .item-area .item-content .link-item a {
+  height: 30px;
+  line-height: 30px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+#container .link-area .item-area .item-content .link-item div {
+  display: block;
+  margin: 0;
+  padding: 0;
+}

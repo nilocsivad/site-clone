@@ -2,140 +2,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>[首页] - Clone web site</title>
+<title>[Index] - Clone web site</title>
 
-<style type="text/css">
-	a:link,
-	a:visited {
-		text-decoration:none;
-	}
-	a:hover,
-	a:active {
-		text-decoration:underline;
-	}
-
-	body {
-		display:block;
-		width:100%;
-		height:100%;
-		margin:0;
-		padding:0;
-		font-family:'Microsoft YaHei','Helvetica Neue',Helvetica,Arial,sans-serif;
-		font-size:12px;
-		overflow:hidden;
-	}
-	
-	header.header {
-		display:block;
-		width:100%;
-		height:70px;
-		margin:0;
-		padding:0;
-		background:#99c742;
-		overflow:hidden;
-	}
-	
-	header.header h1.site-name {
-		width:80%;
-		min-width:960px;
-		height:70px;
-		line-height:70px;
-		margin:0 auto;
-		padding:0;
-		color:white;
-	}
-	
-	#wrapper {
-		display:block;
-		width:100%;
-		margin:0;
-		padding:0;
-		padding-bottom:30px;
-		overflow:hidden;
-	}
-	
-	#wrapper p.empty {
-		display:block;
-		width:100%;
-		height:10px;
-		margin:0;
-		padding:0;
-	}
-
-	#container {
-		display:block;
-		width:80%;
-		min-width:960px;
-		min-height:380px;
-		margin:0 auto;
-		padding:0;
-		overflow:hidden;
-	}
-	
-	div.link-item {
-		height:30px;
-		line-height:30px;
-		float:left;
-		display:block;
-		margin:10px;
-		padding:0 10px;
-		border:1px solid #d8dadf;
-	}
-	
-	div.link-item a {
-		height:100%;
-		line-height:120%;
-		overflow:hidden;
-	}
-	
-	footer.footer {
-		display:block;
-		width:100%;
-		margin:0;
-		padding:0;
-		background:#568f10;
-		overflow:hidden;
-		position:fixed;
-		bottom:0px;
-	}
-	
-	footer.footer p.declare {
-		display:block;
-		width:80%;
-		min-width:960px;
-		height:30px;
-		line-height:30px;
-		margin:0 auto;
-		padding:0;
-		text-align:center;
-		color:white;
-	}
-</style>
-<script type="text/javascript">
-	var HEADER_H = 70, FOOTER_H = 30; // ** 头部/底部 高度常量
-	var EMPTY_H = 10; // ** 空白 p 标签高度
-	function reset() {
-	}
-	window.onload = reset;
-	window.onresize = function() {
-		window.setTimeout( reset, 100 );
-	};
-</script>
-<script type="text/javascript">
-	//返回浏览器输出的宽高
-	function getBrowserHeight() { 
-		var intH = 0; 
-		var intW = 0; 
-		document.documentElement.clientHeight>document.documentElement.scrollHeight ? intH = document.documentElement.clientHeight : intH = document.documentElement.scrollHeight;
-		document.documentElement.clientWidth>document.documentElement.scrollWidth ? intW = document.documentElement.clientWidth : intW = document.documentElement.scrollWidth;
-		return { width: parseInt(intW), height: parseInt(intH) }; 
-	} 
-</script>
 <!--[if lt IE 9]>
 <script type="text/javascript">
-	window.alert( "此站点不支持 IE6,7,8, 请升级浏览器或使用标准浏览器, firefox 或 chrome 等!" );
+	window.alert( "This site not supported IE6,7,8, please upgrade your browser or use the Firefox, Chrome Browser!" );
 </script>
 <![endif]-->
+
+<link href="./styles/html.style.css" rel="stylesheet" />
+<link href="./styles/html.header.style.css" rel="stylesheet" />
+<link href="./styles/index.html.style.css" rel="stylesheet" />
+<link href="./styles/html.footer.style.css" rel="stylesheet" />
+
+<script type="text/javascript" src="./scripts/html.script.js"></script>
+<script type="text/javascript" src="./scripts/html.href.script.js"></script>
+<script type="text/javascript" src="./scripts/index.html.script.js"></script>
 </head>
 <body>
 
@@ -148,52 +30,87 @@
 		<p class="empty">&nbsp;</p>
 		
 		<div id="container">
-			<script type="text/javascript">
-				function hrefCallback(item) {
-					var href = item.getAttribute( "href" );
-					if ( href.indexOf( "?" ) > 0 ) {
-						href = href.substring( 0, href.indexOf( "?" ) );
-					}
-					href = href + "?t=" + ( new Date() ).getTime();
-					item.setAttribute( "href", href );
-				}
-			</script>
-			<div class="item-area" style="display:block;margin:0;padding:0;overflow:hidden;border:1px solid #ffbb76;">
-				<div style="display:block;width:100%;height:30px;line-height:30px;margin:0;padding:0;background:#ffe7cf;border-bottom:1px solid #ffbb76;">
-					<span style="display:block;margin:0 0 0 10px;padding:0;">登录页</span>
-				</div>
-				<div style="display:block;width:100%;margin:0;padding:0;overflow:hidden;">
-					<div class="link-item">
-						<a target="_blank" onclick="hrefCallback(this)" href="./my.screenname.aol.com/_cqr/login/login.psp/my.screenname.aol.com-_cqr-login-login.psp.html" title="AOL.com - Welcome to AOL">AOL.com - Welcome to AOL https://my.screenname.aol.com/_cqr/login/login.psp</a>
+			
+			<div style="overflow:hidden;">
+				<!-- scroll images -->
+				<div class="scroll-img">
+					<div class="img-box">
+						<ul id="scroll-img-ul" onmouseover="auto_show(false)" onmouseout="auto_show(true)">
+							<li><a href="#"><img alt="" src="" data-src="./images/1001.jpg" /></a></li>
+							<li><a href="#"><img alt="" src="" data-src="./images/1002.jpg" /></a></li>
+							<li><a href="#"><img alt="" src="" data-src="./images/1003.jpg" /></a></li>
+							<li><a href="#"><img alt="" src="" data-src="./images/1004.jpg" /></a></li>
+							<li><a href="#"><img alt="" src="" data-src="./images/1005.jpg" /></a></li>
+							<li><a href="#"><img alt="" src="" data-src="./images/1006.jpg" /></a></li>
+							<li><a href="#"><img alt="" src="" data-src="./images/1007.jpg" /></a></li>
+							<li><a href="#"><img alt="" src="" data-src="./images/1008.jpg" /></a></li>
+						</ul>
 					</div>
-					<div class="link-item">
-						<a target="_blank" onclick="hrefCallback(this)" href="./github.com/login/github.com-login.html" title="Sign in · GitHub">Sign in · GitHub https://github.com/login</a>
+					<div class="img-points-box" style="filter:alpha(opacity=75);opacity:0.75;">
+						<ul id="scroll-img-point">
+							<li><a href="#" onclick="show_img(this)" onmouseout="auto_show(true)"></a></li>
+							<li><a href="#" onclick="show_img(this)" onmouseout="auto_show(true)"></a></li>
+							<li><a href="#" onclick="show_img(this)" onmouseout="auto_show(true)"></a></li>
+							<li><a href="#" onclick="show_img(this)" onmouseout="auto_show(true)"></a></li>
+							<li><a href="#" onclick="show_img(this)" onmouseout="auto_show(true)"></a></li>
+							<li><a href="#" onclick="show_img(this)" onmouseout="auto_show(true)"></a></li>
+							<li><a href="#" onclick="show_img(this)" onmouseout="auto_show(true)"></a></li>
+							<li><a href="#" onclick="show_img(this)" onmouseout="auto_show(true)"></a></li>
+						</ul>
 					</div>
-					<div class="link-item">
-						<a target="_blank" onclick="hrefCallback(this)" href="./cpanel.hostinger.com.hk/auth/cpanel.hostinger.com.hk-auth.html" title="登录至您的账号">登录至您的账号 http://cpanel.hostinger.com.hk</a>
+				</div><!-- end scroll images -->
+				
+				<!-- link area -->
+				<div class="link-area">
+					<div class="item-area">
+						<div class="item-title">
+							<span>登录</span>
+						</div>
+						<div class="item-content">
+							<div class="link-item">
+								<a target="_blank" onclick="hrefCallback(this)" href="./menu.html#login-page" title="Login">链接</a>
+								<div>
+									收录的登录页
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="link-item">
-						<a target="_blank" onclick="hrefCallback(this)" href="./account.www.net.cn/login/login.htm/account.www.net.cn-login-login.htm.html" title="万网-帐号登录">万网-帐号登录 https://account.www.net.cn/login/login.htm</a>
+					<div class="item-area">
+						<div class="item-title">
+							<span>首页</span>
+						</div>
+						<div class="item-content">
+							<div class="link-item">
+								<a target="_blank" onclick="hrefCallback(this)" href="./menu.html#index-page" title="Login">链接</a>
+								<div>
+									收录的网站首页
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
+					<div class="item-area">
+						<div class="item-title">
+							<span>图片特效</span>
+						</div>
+						<div class="item-content">
+							<div class="link-item">
+								<a target="_blank" onclick="hrefCallback(this)" href="./menu.html#index-page" title="Login">链接</a>
+								<div>
+									收录的图片特效
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- end link area -->
 			</div>
-		
-			<p class="empty">&nbsp;</p>
-		
-			<div class="item-area" style="display:block;margin:0;padding:0;overflow:hidden;border:1px solid #ffbb76;">
-				<div style="display:block;width:100%;height:30px;line-height:30px;margin:0;padding:0;background:#ffe7cf;border-bottom:1px solid #ffbb76;">
-					<span style="display:block;margin:0 0 0 10px;padding:0;">网站首页</span>
-				</div>
-				<div style="display:block;width:100%;margin:0;padding:0;overflow:hidden;">
-					<div class="link-item">
-						<a target="_blank" onclick="hrefCallback(this)" href="./www.eswmz.com/cecba/welcome1.jsp/www.eswmz.com-cecba-welcome1.jsp.html" title="全球商务名址服务中心">全球商务名址服务中心 http://www.eswmz.com</a>
-					</div>
-					<div class="link-item">
-						<a target="_blank" onclick="hrefCallback(this)" href="./www.quanjing.com/www.quanjing.com.html" title="全景网络_中国最大的图片库和图片分享网站">全景网络_中国最大的图片库和图片分享网站 http://www.quanjing.com/</a>
-					</div>
-				</div>
+				
+			<div>
+				<p></p>
 			</div>
+			
 		</div>
+		
+		<p class="empty">&nbsp;</p>
 		
 	</div>
 	
@@ -204,7 +121,8 @@
 	</footer>
 	
 <!-- jquery -->
-<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<!-- <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script> -->
+<script src="./scripts/jquery.min.js"></script>
 
 </body>
 </html>

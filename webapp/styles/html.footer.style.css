@@ -1,0 +1,21 @@
+footer.footer {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 20px 0;
+  overflow: hidden;
+  border-top: 1px solid #dcdcdc;
+}
+footer.footer p.declare {
+  display: block;
+  min-width: 960px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 auto;
+  padding: 0;
+  color: #9c9c9c;
+  text-align: center;
+}
+footer.footer p.declare a {
+  color: #9c9c9c;
+}
