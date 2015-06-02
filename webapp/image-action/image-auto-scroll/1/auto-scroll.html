@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>[图片自动滚动] - Clone web site</title>
+
+<style type="text/css">
+body {
+	margin:0;
+	padding:0;
+}
+
+.img-introduce {
+  display:block;
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+}
+.img-introduce a.cur-intro {
+  display:block;
+  cursor:pointer;
+  float:left;
+  width:20px;
+  height:50px;
+  background:#333333;
+  opacity:0.5;
+  margin:0;
+  padding:10px;
+  position:absolute;
+  top:260px;
+  z-index:99;
+}
+.img-introduce a.cur-intro-l {
+  left:20px;
+}
+.img-introduce a.cur-intro-r {
+  right:20px;
+}
+</style>
+
+<script type="text/javascript" src="../../script/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+	var BODY_W = 0;
+	var BODY_H = 0;
+	var auto_scroll_timer = null;
+	var isSetAutoScroll = false;
+	var LONG_DELAY_TIME = 3000;
+
+	function init() {
+
+		var body_w_str = window.getComputedStyle(document.body).width;
+			body_w_str = body_w_str.substring(0, body_w_str.length - 2);
+		BODY_W = window.parseInt(body_w_str);
+
+		var body_h_str = window.getComputedStyle(document.body).height;
+			body_h_str = body_h_str.substring(0, body_h_str.length - 2);
+		BODY_H = window.parseInt(body_h_str);
+		
+		BODY_H = BODY_H == 0 ? $(window).height() :BODY_H;
+
+		var introduce = document.getElementById("img-introduce");
+		introduce.style.width = BODY_W + "px";
+		introduce.style.height = BODY_H + "px";
+
+		var full_w = 0;
+		if (window.getComputedStyle) { // ** Standard Browser
+			full_w = window.getComputedStyle(introduce)["width"];
+
+		} else { // ** IE Browser
+			var full_w = introduce.currentStyle["width"];
+		}
+
+		var scroll = document.getElementById("introduce_scroll_dom");
+		scroll.style.left = "0px";
+
+		var items = scroll.getElementsByTagName("li");
+		for (var i = 0, l = items.length; l > i; ++i) {
+			var li = items[i];
+			li.style.width = BODY_W + "px";
+			li.style.height = BODY_H + "px";
+			li.style.backgroundPosition = "center";
+		}
+
+		if (!isSetAutoScroll) {
+			auto_scroll_timer = window.setInterval(function() {
+				introduce_scroll('introduce_scroll_dom', 'right');
+			}, LONG_DELAY_TIME);
+			isSetAutoScroll = true;
+		}
+	};
+	window.onload = init;
+	window.onresize = function() {
+		window.setTimeout(init, 100);
+	};
+</script>
+</head>
+<body>
+
+<div style="display:block;width:0px;height:100%;min-height:2000px;margin:0;padding:0;position:absolute;top:0px;left:0px;"></div>
+
+
+	<div id="img-introduce" class="img-introduce">
+		<div style="display:block; width:99999px; height:100%; margin:0; padding:0;" onmouseover="auto_scroll( false )" onmouseout="auto_scroll( true )">
+			<ol id="introduce_scroll_dom" style="display:block; width:100%; height:100%; margin:0; padding:0; position:relative; left:0px; list-style:none;">
+				<li style="display:block; float:left; width:100%; height:100%; margin:0; padding:0px;" /><img src="./images/01.jpg" style="display:block;max-width:100%;max-height:100%;margin:0 auto;padding:0 auto;" /></li>
+				<li style="display:block; float:left; width:100%; height:100%; margin:0; padding:0px;" /><img src="./images/02.jpg" style="display:block;max-width:100%;max-height:100%;margin:0 auto;padding:0 auto;" /></li>
+				<li style="display:block; float:left; width:100%; height:100%; margin:0; padding:0px;" /><img src="./images/03.jpg" style="display:block;max-width:100%;max-height:100%;margin:0 auto;padding:0 auto;" /></li>
+				<li style="display:block; float:left; width:100%; height:100%; margin:0; padding:0px;" /><img src="./images/04.jpg" style="display:block;max-width:100%;max-height:100%;margin:0 auto;padding:0 auto;" /></li>
+				<li style="display:block; float:left; width:100%; height:100%; margin:0; padding:0px;" /><img src="./images/05.jpg" style="display:block;max-width:100%;max-height:100%;margin:0 auto;padding:0 auto;" /></li>
+				<li style="display:block; float:left; width:100%; height:100%; margin:0; padding:0px;" /><img src="./images/06.jpg" style="display:block;max-width:100%;max-height:100%;margin:0 auto;padding:0 auto;" /></li>
+				<li style="display:block; float:left; width:100%; height:100%; margin:0; padding:0px;" /><img src="./images/07.jpg" style="display:block;max-width:100%;max-height:100%;margin:0 auto;padding:0 auto;" /></li>
+				<li style="display:block; float:left; width:100%; height:100%; margin:0; padding:0px;" /><img src="./images/08.jpg" style="display:block;max-width:100%;max-height:100%;margin:0 auto;padding:0 auto;" /></li>
+				<li style="display:block; float:left; width:100%; height:100%; margin:0; padding:0px;" /><img src="./images/09.jpg" style="display:block;max-width:100%;max-height:100%;margin:0 auto;padding:0 auto;" /></li>
+				<li style="display:block; float:left; width:100%; height:100%; margin:0; padding:0px;" /><img src="./images/10.jpg" style="display:block;max-width:100%;max-height:100%;margin:0 auto;padding:0 auto;" /></li>
+				<li style="display:block; float:left; width:100%; height:100%; margin:0; padding:0px;" /><img src="./images/11.jpg" style="display:block;max-width:100%;max-height:100%;margin:0 auto;padding:0 auto;" /></li>
+			</ol>
+		</div>
+		<a class="cur-intro cur-intro-l" href="javascript:introduce_scroll('introduce_scroll_dom','left')"> <img src="./images/prev.png" /></a> 
+		<a class="cur-intro cur-intro-r" href="javascript:introduce_scroll('introduce_scroll_dom','right')"> <img src="./images/next.png" /></a>
+		<script type="text/javascript">
+			function auto_scroll(enable) {
+				if (enable) {
+					if (!isSetAutoScroll) {
+						auto_scroll_timer = window.setInterval(function() {
+							introduce_scroll('introduce_scroll_dom', 'right');
+						}, LONG_DELAY_TIME);
+					}
+				} else {
+					window.clearInterval(auto_scroll_timer);
+				}
+				isSetAutoScroll = enable;
+			}
+		</script>
+		<script type="text/javascript">
+			var isScrolling = false;
+			function introduce_scroll(olID, direction) {
+
+				if (isScrolling) {
+					return;
+				}
+				isScrolling = true;
+
+				var liWidth = BODY_W;
+				var count = 1;
+				var num = 50;
+
+				var scroll_dom = document.getElementById(olID);
+				var str_left = scroll_dom.style.left;
+				str_left = str_left.substring(0, str_left.length - 2);
+				var left = window.parseInt(str_left);
+
+				var ol_width = scroll_dom.getElementsByTagName("li").length * liWidth;
+
+				var go = 0;
+				if (direction == 'left') {
+					if (-left <= 0) {
+						num = 400;
+						go = liWidth * count - ol_width;
+					} else {
+						go = left + liWidth;
+					}
+				} else {
+					if (-left >= ol_width - liWidth * count) {
+						go = 0;
+						num = 400;
+					} else {
+						go = left - liWidth;
+					}
+				}
+
+				if (go > left) {
+					var timer = window.setInterval(function() {
+						if (left < go) {
+							left += num;
+							scroll_dom.style.left = left + "px";
+						} else {
+							window.clearInterval(timer);
+							scroll_dom.style.left = go + "px";
+							isScrolling = false;
+						}
+					}, 1);
+				} else {
+					var timer = window.setInterval(function() {
+						if (left > go) {
+							left -= num;
+							scroll_dom.style.left = left + "px";
+						} else {
+							window.clearInterval(timer);
+							scroll_dom.style.left = go + "px";
+							isScrolling = false;
+						}
+					}, 1);
+				}
+				scroll_dom.style.left = go + "px";
+			}
+		</script>
+	</div>
+
+
+
+
+</body>
+</html>

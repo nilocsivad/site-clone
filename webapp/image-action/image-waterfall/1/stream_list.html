@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>[瀑布流] - Clone web site</title>
+
+<style type="text/css">
+	* {
+		margin:0;
+		padding:0;
+		font-family:Microsoft YaHei;
+		font-size:12px;
+	}
+	
+	.li_score {
+		display:block;
+		float:left;
+		width:17px;
+		height:16px;
+		margin:5px;
+		margin-left:0;
+		padding:0px 10px;
+		background:#cc0000;
+		color:#ffffff;
+	}
+	.li_score_f {
+		margin-left:0;
+		margin-right:0;
+	}
+	.li_score_n { /** n = not **/
+		background:#cccccc;
+		color:#999999;
+	}
+	.li_container {
+		display:block;
+		float:left;
+		width:20%;
+		margin:0;
+		padding:0 auto;
+	}
+</style>
+
+<script type="text/javascript">
+	var body_w = 0;
+	var COLUMNS = 3;
+	
+	var global_li_width = 220;
+	window.onload = function() {
+		
+		var body_w_str = window.getComputedStyle( document.body ).width;
+				body_w_str = body_w_str.substring( 0, body_w_str.length - 2 );
+		body_w = window.parseInt( body_w_str );
+		
+		var dom = document.getElementById( "image_stream_dom" );
+		var dom_w_str = window.getComputedStyle( dom, null ).width;
+				dom_w_str = dom_w_str.substring( 0, dom_w_str.length - 2 );
+		var dom_w = window.parseInt( dom_w_str ) - 1;
+		
+		COLUMNS++;
+		do {
+			if ( dom_w > COLUMNS * global_li_width ) {
+				COLUMNS++;
+			} else {
+				COLUMNS--;
+				break;
+			}
+		} while ( true );
+		
+		for ( var i = 1; COLUMNS >= i; ++i ) {
+			var new_div = document.createElement("div");
+			new_div.setAttribute("class", "li_container");
+			new_div.setAttribute("id", "image_stream_dom_" + i);
+			dom.appendChild( new_div );
+		}
+		
+		window.setTimeout( StreamImageCallback, 500 );
+	};
+	window.onscroll = function( e ) {
+		var display = ( window.scrollY > 300 ) ? "block" : "none";
+		document.getElementById("load-more").style.display = display;
+	};
+</script>
+<script type="text/javascript">
+	var m_i = 0;
+	
+	function StreamImageCallback( lastID ) {
+		
+		var img_arr = new Array();
+		// ** 此处远程抓取数据
+		// ......
+		if ( lastID == null ) {
+			
+		}
+		
+		var demo_item = document.getElementById( "li_item" );
+		for ( var i = 1, l = 17; l >= i; ++i ) {
+			var data = new Object();
+			data.src = "./images/" + ( ( i < 10 ) ? ( "0" + i + ".jpg" ) : ( i + ".jpg" ) );
+			data.id = i + m_i;
+			img_arr.push( data );
+		}
+		m_i = m_i + img_arr.length;
+		// ** 创造数据结束
+		
+		var parent = document.getElementById( "image_stream_dom" );
+		var li_item = document.getElementById( "li_item" );
+		
+		var m = 0;
+		var timer = window.setInterval( function() {
+			var data = img_arr[ m ];
+			var item = li_item.cloneNode( true );
+			item.removeAttribute("id");
+			item.setAttribute("data-id", data.id);
+			item.getElementsByTagName("img")[0].src = data.src;
+			LoadItem( getMinHeightDom(), item );
+			m++;
+			if ( m == img_arr.length ) {
+				window.clearInterval( timer );
+			}
+		}, 70 );
+	}
+	
+	function px2num( px ) {
+		px = px.substring( 0, px.length - 2 );
+		return window.parseInt( px );
+	}
+	
+	function getMinHeightDom() {
+		
+		var id_prefix = "image_stream_dom_";
+		var dom = document.getElementById( id_prefix + 1 );
+		var min_h = px2num( window.getComputedStyle(dom).height );
+		var m_h_d = dom;
+		for ( var i = 2; COLUMNS >= i; ++i ) {
+			var d = document.getElementById( id_prefix + i );
+			var d_h = px2num( window.getComputedStyle(d).height );
+			if ( min_h > d_h ) {
+				min_h = d_h;
+				m_h_d = d;
+			}
+		}
+		return m_h_d;
+	}
+	
+	function LoadItem( parent, item ) {
+// 		var style = window.getComputedStyle( item );
+		parent.appendChild( item );
+	}
+</script>
+</head>
+<body>
+	
+	<div style="display:none;">
+		<div id="li_item" class="li_item" style="display:block;width:208px;height:auto;margin:5px auto;padding:5px;background:#fefefe;border:1px solid #bbbbbb;border-radius:5px;">
+			<img src="" onerror="this.src='./images/qinlanala.jpg'" style="display:block;width:208px;margin:0;padding:0;" />
+			<div style="display:block;width:100%;overflow:hidden;margin:0;padding:0;padding-left:1px;">
+				<span class="li_score">20</span>
+				<span class="li_score">40</span>
+				<span class="li_score">60</span>
+				<span class="li_score li_score_n">80</span>
+				<span class="li_score li_score_f li_score_n" >100</span>
+			</div>
+			<div style="display:block;width:100%;margin:0;padding:0;" title="js图片特效制作js焦点图上下滚动slider切换效果">js图片特效制作js焦点图上下滚动slider切换效果</div>
+			<div style="display:block;width:100%;height:30px;line-height30px;margin:0;padding:0;">
+				<span style="display:block;float:left;margin:5px 0;padding:2px 4px;border:1px solid #c00000;border-radius:4px;text-decoration:none;color:#666666;">￥3000.00</span>
+				<a href="#" style="display:block;float:right;margin:5px 0;padding:2px 10px;text-decoration:none;color:#666666;">评论:(<b>999+</b>)</a>
+			</div>
+		</div>
+	</div>
+	
+	<div style="display:block;float:left;width:100%;margin:0;padding:0;">
+		<div id="image_stream_dom" style="display:block;width:90%;min-width:1100px;margin:0 auto;padding:0;position:relative;"></div>
+	</div>
+	
+	<div id="load-more" style="display:none;float:left;width:100%;margin:0;padding:0;">
+		<a href="javascript:StreamImageCallback()" style="display:block;width;100%;height:40px;line-height:40px;margin:0;padding:0;background:#fefefe;border-top:1px solid #aaaaaa;border-bottom:1px solid #aaaaaa;text-align:center;">Load more...</a>
+	</div>
+	
+	<p style="clear:both;">&nbsp;</p>
+	
+</body>
+</html>

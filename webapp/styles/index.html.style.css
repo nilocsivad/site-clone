@@ -87,13 +87,7 @@
 #container .scroll-img .img-points-box ul#scroll-img-point li a.active {
   background: red;
 }
-#container .link-area {
-  display: block;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-#container .link-area .item-area {
+#container .item-area {
   display: block;
   float: left;
   margin: 0 0 10px 10px;
@@ -101,7 +95,7 @@
   overflow: hidden;
   border: 1px solid #6a931b;
 }
-#container .link-area .item-area .item-title {
+#container .item-area .item-title {
   display: block;
   height: 30px;
   line-height: 30px;
@@ -110,19 +104,19 @@
   background: #99c742;
   border-bottom: 1px solid #86b52d;
 }
-#container .link-area .item-area .item-title span {
+#container .item-area .item-title span {
   display: block;
   margin: 0 10px;
   padding: 0;
   color: #ffffff;
 }
-#container .link-area .item-area .item-content {
+#container .item-area .item-content {
   display: block;
   0margin: 0;
   padding: 0;
   overflow: hidden;
 }
-#container .link-area .item-area .item-content .link-item {
+#container .item-area .item-content .link-item {
   display: block;
   float: left;
   margin: 10px;
@@ -130,14 +124,14 @@
   overflow: hidden;
   border: 1px solid #d8dadf;
 }
-#container .link-area .item-area .item-content .link-item a {
+#container .item-area .item-content .link-item a {
   height: 30px;
   line-height: 30px;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
-#container .link-area .item-area .item-content .link-item div {
+#container .item-area .item-content .link-item div {
   display: block;
   margin: 0;
   padding: 0;
